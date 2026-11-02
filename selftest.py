@@ -31,7 +31,12 @@ def main():
 
         for name in ("hello.txt", "big.bin"):
             dest = os.path.join(here, "downloaded_" + name)
+            if os.path.exists(dest):
+                os.remove(dest)
             count = download_file(HOST, PORT, name, dest)
+            if not os.path.exists(dest):
+                print(name, "- returned", count, "- download_file did not save a file to dest")
+                continue
             with open(os.path.join(files, name), "rb") as a, open(dest, "rb") as b:
                 same = a.read() == b.read()
             print(name, "- returned", count, "- identical to the original:", same)
