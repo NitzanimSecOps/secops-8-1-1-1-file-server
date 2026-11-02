@@ -6,10 +6,11 @@ push — every push is graded automatically and the score syncs to Codo.
 ## Solve
 
     client.py
-    selftest.py
     server.py
 
 Write your code in place; **don't rename or move** the file(s).
+
+`selftest.py` is a local tester, not part of your solution. Run it with `python3 selftest.py`.
 
 ## Submit
 
